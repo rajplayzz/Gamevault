@@ -46,7 +46,7 @@ select.chip{padding-right:8px}.price-f{display:flex;align-items:center;gap:8px;f
 .cond{font-size:11px;color:#b9c8da;background:#1a2636;padding:3px 7px;border-radius:6px}.row{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px}
 .ca{display:flex;gap:8px}.ca button{flex:1;padding:9px 6px;font-size:12px}
 .empty{border:1px dashed #34445c;border-radius:16px;padding:32px;text-align:center;color:var(--muted);grid-column:1/-1}
-.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.trust div{background:#101a28;border:1px solid #243247;border-radius:16px;padding:16px}.trust span{font-size:24px}
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.trust>div{background:#101a28;border:1px solid #243247;border-radius:16px;padding:16px}.trust span{font-size:24px}
 footer{border-top:1px solid #202c3d;margin-top:40px;padding:26px 0 90px;color:#9cabc0}.fi{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}footer a{color:#b9c9dc;text-decoration:none;font-size:13px;margin-right:16px}
 .ov{position:fixed;inset:0;background:#02050bd9;z-index:50;display:none;align-items:center;justify-content:center;padding:16px}.ov.show{display:flex}.ov.show .md{animation:pop .25s ease}
 @keyframes pop{from{opacity:0;transform:translateY(14px) scale(.98)}}
@@ -84,10 +84,33 @@ footer{border-top:1px solid #202c3d;margin-top:40px;padding:26px 0 90px;color:#9
 .ib.bump{animation:bump .4s}@keyframes bump{40%{transform:scale(1.18)}}.btn:active,.chip:active{transform:scale(.96)}
 @media(max-width:620px){.hd{display:none}.dc{aspect-ratio:auto;padding:30px 60px}.cover{padding:16px}.dt{font-size:9px}}
 @media(prefers-reduced-motion:reduce){#splash{display:none}.rv{opacity:1!important;transform:none!important}}
+
+.case{position:relative;display:block;width:100%;aspect-ratio:813/1000;background:#000;border-radius:5px;overflow:hidden;box-shadow:0 14px 30px #000b,0 0 0 1px #ffffff22 inset;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.case:after{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(115deg,#fff0 30%,#ffffff22 45%,#fff0 60%),linear-gradient(90deg,#0006,#0000 4%)}
+.case .face{position:absolute;inset:0;border-radius:0;background:radial-gradient(circle at 50% 40%,hsl(var(--h) 60% 34%),hsl(var(--h) 45% 8%) 80%)}
+.case .dt{left:0;right:0;bottom:auto;top:46%;transform:none;width:auto;padding:0 12%;font-size:16px;line-height:1.15;color:#fff;text-shadow:0 2px 14px #000;font-weight:900}
+.cover{aspect-ratio:auto;display:block;padding:16px 16px 14px}.card:hover .case{transform:perspective(800px) rotateY(-7deg) translateY(-4px) scale(1.02)}.hrt,.stk{z-index:5}
+.dc{aspect-ratio:auto;padding:22px 34px}
+.hd .case{position:absolute;width:52%}.fa{left:0;top:0;transform:rotate(-7deg);animation:fl 5s ease-in-out infinite}.fb{right:0;bottom:0;transform:rotate(6deg);animation:fl 6s ease-in-out infinite reverse}
+.ci .case{width:44px;flex:none;border-radius:3px;box-shadow:0 4px 10px #0008}.ci .case:after{display:none}.ci .ch>*,.ci .dt{display:none}.ci .ch{height:12%;aspect-ratio:auto}
+#splash .case.big{width:130px;animation:pop 1s both;box-shadow:0 0 70px #2684ff66,0 14px 30px #000b}@keyframes pop{from{opacity:0;transform:translateY(30px) scale(.8) rotate(-6deg)}}
+@media(max-width:620px){.case .dt{font-size:12px}.cover{padding:12px}.dc{padding:22px 60px}}
+
+.case{container-type:inline-size;border-radius:4px}.case:after{display:none}
+.ch{position:absolute;z-index:2;left:0;right:0;top:0;aspect-ratio:813/101;background:#fff;display:flex;align-items:center;overflow:hidden}
+.ch img{display:block;position:static;inset:auto;width:100%;height:100%;opacity:1;object-fit:fill;transition:none}.ps4 .ch{background:#0b3a8c;box-shadow:inset 0 -1cqw 0 #14307a}
+.ch .lgo{width:auto;object-fit:contain;height:66%;margin:-1cqw 0 0 4%}.ch b{font:300 7.4cqw/1 "Eurostile","Segoe UI","Helvetica Neue",Arial,sans-serif;letter-spacing:.17em;margin:-1cqw 0 0 5%;color:#fff}
+
+.pg{position:absolute;z-index:2;left:3.6cqw;bottom:3.6cqw;width:14cqw;aspect-ratio:1/1.1;border-radius:1.3cqw;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#f4900c;color:#fff;box-shadow:0 1px 6px #0007}
+.pg b{font:700 8.4cqw/1 "Arial Narrow",Arial,sans-serif}.pg i{font:normal 1.7cqw/1 Arial,sans-serif;margin-top:.7cqw}
+.a3{background:#3f9a43}.a7{background:#7fb53a}.a12{background:#f6b21c}.a16{background:#f4900c}.a18{background:#d92b2b}
+.pb{position:absolute;z-index:2;right:3.6cqw;bottom:3.6cqw;max-width:30cqw;background:#fff;color:#14181f;border-radius:1.4cqw;padding:1.6cqw 2.2cqw;font:800 3cqw/1.1 Arial,sans-serif;text-transform:uppercase;text-align:center;box-shadow:0 1px 6px #0007}
+.fi{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:4}.full .ch,.full .pg,.full .pb,.full .dt{display:none}
+.sm .pg,.sm .pb{display:none}
 </style>
 </head>
 <body>
-<div id="splash"><div class="disc ps5 big" data-p="GAMEVAULT"><div class="face"></div><i class="hole"></i></div><b>GAMEVAULT</b></div>
+<div id="splash"><div class="case ps5 big" style="--h:215"><div class="face"><div class="dt">GAMEVAULT</div></div><div class="ch" data-p="PS5"></div></div><b>GAMEVAULT</b></div>
 <div class="ann">Extra 10% off on orders above ₹5,000 · Free delivery above ₹1,999</div>
 <header><div class="wrap nav">
 <a class="brand" href="#"><span class="mark"><svg width="20" viewBox="0 0 24 24" fill="none" stroke="#d9ecff" stroke-width="1.8"><path d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5z"/><path d="M4.5 7.8 12 12l7.5-4.2M12 12v8.5"/></svg></span>GAMEVAULT</a>
@@ -95,7 +118,7 @@ footer{border-top:1px solid #202c3d;margin-top:40px;padding:26px 0 90px;color:#9
 <div class="acts"><button class="ib" data-a="wl">♡ <b id="wc">0</b></button><button class="ib" data-a="cart">Cart <b id="cc">0</b></button></div>
 </div></header>
 <main class="wrap">
-<section class="hero"><div class="hb"><div class="hd"><div class="disc ps5 f1" data-p="PS5"><div class="face"></div><i class="hole"></i></div><div class="disc ps4 f2" data-p="PS4"><div class="face"></div><i class="hole"></i></div></div><h1>Spin up your next game.</h1><p>Pre-owned PS5 and PS4 discs, checked and graded, at fair prices.</p>
+<section class="hero"><div class="hb"><div class="hd"><div class="case ps5 fa" id="hf1" style="--h:215"><div class="face"><div class="dt">God of War Ragnarök</div></div><div class="ch" data-p="PS5"></div></div><div class="case ps4 fb" id="hf2" style="--h:25"><div class="face"><div class="dt">Red Dead Redemption 2</div></div><div class="ch" data-p="PS4"></div></div></div><h1>Spin up your next game.</h1><p>Pre-owned PS5 and PS4 discs, checked and graded, at fair prices.</p>
 <button class="btn" data-a="go">Browse games</button> <button class="btn s" data-a="sell">Sell your discs</button>
 <div class="stats"><div><b id="n">0</b><span class="muted">titles listed</span></div><div><b>Graded</b><span class="muted">condition on every disc</span></div><div><b>PS4 + PS5</b><span class="muted">physical discs only</span></div></div></div></section>
 <div class="mq"><div id="mqi"></div></div>
@@ -120,7 +143,8 @@ footer{border-top:1px solid #202c3d;margin-top:40px;padding:26px 0 90px;color:#9
 /* ===== EDIT ME ===== */
 const CFG={wa:"919370003225",free:1999,ship:79,cod:50}; // wa = WhatsApp number with country code, no +
 const STOCK={};  // real stock, e.g. {"Elden Ring|PS5":0}. Default is 1 copy per listing.
-const COND={};   // real condition, e.g. {"Elden Ring|PS5":"Like New"}. Options: Like New, Good, Acceptable
+const COND={};
+const COVERS={"Elden Ring|PS5":"https://m.media-amazon.com/images/I/71IQsz84aBL._AC_UF894,1000_QL80_.jpg"}; // full retail cover photos: paste a link per game, e.g. "God of War|PS4":"https://...jpg". These show exactly as given.   // real condition, e.g. {"Elden Ring|PS5":"Like New"}. Options: Like New, Good, Acceptable
 /* Catalogue: Name;platform (5, 4 or B=both);year;tier (A=new AAA, B=mid, C=budget/older);genre;optional Wikipedia title for the photo */
 const RAW=`God of War Ragnarök;B;2022;A;Action
 God of War;4;2018;C;Action;God_of_War_(2018_video_game)
@@ -328,17 +352,122 @@ Nioh 2|Brutal samurai action RPG in a supernatural Sengoku Japan.
 Hitman: World of Assassination|Sandbox stealth: eliminate targets creatively across big locations.
 Tony Hawk's Pro Skater 1 + 2|Skateboarding classics rebuilt with modern visuals and big combos.
 MLB The Show 25|Baseball sim with Road to the Show and Diamond Dynasty.`;
+const METARAW=`God of War Ragnarök|18|SONY
+God of War|18|SONY
+Marvel's Spider-Man 2|16|SONY
+Marvel's Spider-Man Remastered|16|SONY
+Marvel's Spider-Man|16|SONY
+Marvel's Spider-Man: Miles Morales|16|SONY
+Horizon Forbidden West|16|SONY
+Horizon Zero Dawn|16|SONY
+The Last of Us Part I|18|SONY
+The Last of Us Part II Remastered|18|SONY
+The Last of Us Part II|18|SONY
+Ghost of Tsushima Director's Cut|18|SONY
+Ghost of Yōtei||SONY
+Astro Bot|7|SONY
+Ratchet & Clank: Rift Apart|12|SONY
+Returnal|16|SONY
+Demon's Souls||SONY
+Gran Turismo 7|3|SONY
+Uncharted: Legacy of Thieves Collection|16|SONY
+Uncharted 4: A Thief's End|16|SONY
+Days Gone|18|SONY
+Death Stranding Director's Cut|18|SONY
+Death Stranding 2: On the Beach||SONY
+Final Fantasy XVI|18|Square Enix
+Final Fantasy VII Remake|16|Square Enix
+Final Fantasy VII Rebirth|16|Square Enix
+Elden Ring|16|Bandai Namco
+Sekiro: Shadows Die Twice|16|Activision
+Dark Souls III|16|Bandai Namco
+Bloodborne|16|SONY
+Black Myth: Wukong||Game Science
+Hogwarts Legacy|12|Warner Bros. Games
+Cyberpunk 2077|18|CD Projekt Red
+The Witcher 3: Wild Hunt|18|CD Projekt Red
+Baldur's Gate 3|18|Larian Studios
+Red Dead Redemption 2|18|Rockstar Games
+Grand Theft Auto V|18|Rockstar Games
+Assassin's Creed Valhalla|18|Ubisoft
+Assassin's Creed Mirage|18|Ubisoft
+Assassin's Creed Shadows|18|Ubisoft
+Assassin's Creed Odyssey|18|Ubisoft
+Far Cry 6|18|Ubisoft
+Call of Duty: Black Ops 6|18|Activision
+Call of Duty: Modern Warfare III|18|Activision
+Call of Duty: Modern Warfare II|18|Activision
+Battlefield 2042|16|EA
+Borderlands 4|18|2K
+Resident Evil 4|18|Capcom
+Resident Evil Village|18|Capcom
+Resident Evil 2|18|Capcom
+Silent Hill 2|18|Konami
+Alan Wake 2|18|Epic Games
+Dead Space|18|EA
+Until Dawn|18|SONY
+Street Fighter 6|12|Capcom
+Mortal Kombat 1|18|Warner Bros. Games
+Mortal Kombat 11|18|Warner Bros. Games
+Tekken 8|16|Bandai Namco
+Tekken 7|16|Bandai Namco
+EA Sports FC 26|3|EA Sports
+EA Sports FC 25|3|EA Sports
+EA Sports FC 24|3|EA Sports
+NBA 2K26|3|2K
+NBA 2K25|3|2K
+WWE 2K24|16|2K
+UFC 5||EA Sports
+F1 24|3|EA Sports
+Need for Speed Unbound|12|EA
+Need for Speed Heat|12|EA
+Persona 5 Royal|16|Atlus
+Persona 3 Reload|16|Atlus
+Like a Dragon: Infinite Wealth||SEGA
+Yakuza: Like a Dragon|18|SEGA
+Dragon Ball Z: Kakarot|12|Bandai Namco
+Dragon Ball: Sparking! Zero|12|Bandai Namco
+One Piece Odyssey|12|Bandai Namco
+Tales of Arise||Bandai Namco
+It Takes Two|12|EA
+Split Fiction|12|EA
+Overcooked! All You Can Eat|3|Team17
+Minecraft|7|Mojang Studios
+LEGO Star Wars: The Skywalker Saga|7|Warner Bros. Games
+Star Wars Jedi: Survivor|16|EA
+Star Wars Jedi: Fallen Order|12|EA
+Diablo IV|18|Blizzard
+Borderlands 3|18|2K
+Dying Light 2 Stay Human|18|Techland
+Marvel's Guardians of the Galaxy|12|Square Enix
+Batman: Arkham Knight|16|Warner Bros. Games
+Sackboy: A Big Adventure|7|SONY
+Crash Bandicoot N. Sane Trilogy|7|Activision
+Spyro Reignited Trilogy|7|Activision
+Kena: Bridge of Spirits|12|Ember Lab
+Detroit: Become Human|18|SONY
+Monster Hunter: World|16|Capcom
+Stellar Blade|18|SONY
+Rise of the Ronin|18|SONY
+Mafia: The Old Country||2K
+Kingdom Hearts III|12|Square Enix
+Nioh 2|18|Koei Tecmo
+Hitman: World of Assassination|18|IO Interactive
+Tony Hawk's Pro Skater 1 + 2||Activision
+MLB The Show 25|3|SONY`;
 /* ===== ENGINE ===== */
 const ST=(()=>{const m={};try{localStorage.setItem("t","1");localStorage.removeItem("t");return localStorage}catch(e){return{getItem:k=>m[k]??null,setItem:(k,v)=>{m[k]=String(v)},removeItem:k=>{delete m[k]}}}})();
 const NOW=new Date().getFullYear(),$=s=>document.querySelector(s),money=n=>"₹"+n.toLocaleString("en-IN");
 const hash=s=>{let h=0;for(const c of s)h=(h*31+c.charCodeAt(0))>>>0;return h},slug=s=>s.toLowerCase().replace(/[^a-z0-9]+/g,"-");
 const CF={"Like New":1.04,"Good":1,"Acceptable":.96},A5=[.85,.78,.7,.63,.56,.5,.45],A4=[.8,.72,.64,.58,.52,.48,.46],PROFIT=150;
+const META={};METARAW.trim().split("\n").forEach(l=>{const[n,a,p]=l.split("|");META[n]={a,p:p==="SONY"?"PlayStation Studios":p}});
 const DESC={};DESCRAW.trim().split("\n").forEach(l=>{const i=l.indexOf("|");DESC[l.slice(0,i)]=l.slice(i+1)});
 const base=(pl,t,y)=>{const a=Math.max(0,NOW-y),m=pl===5?{A:4999,B:3999,C:2999}[t]:{A:3499,B:2999,C:2499}[t];return m*(a>=9?.4:(pl===5?A5:A4)[Math.min(a,6)])};
 const G=RAW.trim().split("\n").flatMap(l=>{const[n,p,y,t,g,w]=l.split(";");return(p==="B"?[5,4]:[+p]).map(pl=>{
  const key=n+"|PS"+pl,h=hash(n),cond=COND[key]||["Like New","Good","Good","Acceptable"][hash(key)%4],b0=base(pl,t,+y),price=Math.round(Math.max(599,b0*CF[cond])/50)*50+PROFIT;
- return{id:slug(key),key,name:n,pl:"PS"+pl,y:+y,genre:g,w:w||n.replace(/ /g,"_"),exact:!!w,cond,price,b0,d:DESC[n]||"",stock:STOCK[key]??1,hue:h%360,s:(n+" "+g+" ps"+pl).toLowerCase().replace(/[^a-z0-9 ]/g,"")}})});
-const disc=(g,x="",u="")=>`<div class="disc ${g.pl.toLowerCase()} ${x}" data-p="${g.pl}"><div class="face">${u?`<img class="ok" alt="" src="${u}">`:""}<div class="dt">${g.name}</div></div><i class="hole"></i></div>`,off=s=>s>5000?Math.round(s*.1):0;
+ return{id:slug(key),key,name:n,pl:"PS"+pl,y:+y,genre:g,w:w||n.replace(/ /g,"_"),exact:!!w,cond,price,b0,d:DESC[n]||"",a:(META[n]||{}).a,pub:(META[n]||{}).p,stock:STOCK[key]??1,hue:h%360,s:(n+" "+g+" ps"+pl).toLowerCase().replace(/[^a-z0-9 ]/g,"")}})});
+const S5="data:image/jpeg;base64,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",L4="data:image/png;base64,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",sin=p=>p==="PS5"?`<img alt="PS5" src="${S5}">`:`<img class="lgo" alt="" src="${L4}"><b>PS4</b>`;
+const disc=(g,x="",u="")=>{const f=COVERS[g.key];return`<div class="case ${f?"full ":""}${g.pl.toLowerCase()} ${x}" style="--h:${g.hue}"><div class="face">${u?`<img class="ok" alt="" src="${u}">`:""}<div class="dt">${g.name}</div></div><div class="ch">${sin(g.pl)}</div>${g.a?`<div class="pg a${g.a}"><b>${g.a}</b><i>www.pegi.info</i></div>`:""}${g.pub?`<div class="pb">${g.pub}</div>`:""}${f?`<img class="fi ok" alt="" src="${f}" onerror="this.parentNode.classList.remove('full');this.remove()">`:""}</div>`},off=s=>s>5000?Math.round(s*.1):0;
 const M=Object.fromEntries(G.map(g=>[g.id,g]));
 let lim=24,F="ALL",cart=JSON.parse(ST.getItem("gv_cart")||"[]").filter(x=>M[x.id]),wl=JSON.parse(ST.getItem("gv_wl")||"[]").filter(x=>M[x]);
 const save=()=>{ST.setItem("gv_cart",JSON.stringify(cart));ST.setItem("gv_wl",JSON.stringify(wl));count()},count=()=>{const n=cart.reduce((q,x)=>q+x.qty,0),c=$("#cc");if(+c.textContent!==n){const b=c.parentNode;b.classList.remove("bump");void b.offsetWidth;b.classList.add("bump")}c.textContent=n;$("#wc").textContent=wl.length};
@@ -353,7 +482,7 @@ async function pic(g){if(IC[g.w])return IC[g.w];if(bad[g.w])return;
  if(u){IC[g.w]=u;try{ST.setItem("gv_img",JSON.stringify(IC))}catch(e){}return u}
  bad[g.w]=1}
 const io=new IntersectionObserver(es=>es.forEach(async e=>{if(!e.isIntersecting)return;const c=e.target;io.unobserve(c);const u=await pic(M[c.dataset.id]);c.classList.remove("sk");if(!u)return;const im=new Image();im.alt="";im.onload=()=>{im.className="ok";c.classList.add("has")};im.src=u;c.querySelector(".face").prepend(im)}),{rootMargin:"250px"});
-const ro=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const t=e.target;t.style.transitionDelay=(Array.from(t.parentNode.children).indexOf(t)%4)*80+"ms";t.classList.add("in");ro.unobserve(t);setTimeout(()=>t.style.transitionDelay="",1000)}),{threshold:.06});
+const ro=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const t=e.target;if(!t.parentNode){ro.unobserve(t);return}t.style.transitionDelay=(Array.from(t.parentNode.children).indexOf(t)%4)*80+"ms";t.classList.add("in");ro.unobserve(t);setTimeout(()=>t.style.transitionDelay="",1000)}),{threshold:.06});
 /* search */
 const match=(g,q)=>{const t=q.toLowerCase().replace(/[^a-z0-9 ]/g,"").split(/\s+/).filter(Boolean);return t.every(w=>g.s.includes(w))};
 function list(){const q=$("#q").value,mx=+$("#pr").value,ge=$("#gen").value,so=$("#sort").value;
@@ -361,7 +490,7 @@ function list(){const q=$("#q").value,mx=+$("#pr").value,ge=$("#gen").value,so=$
  if(so==="l")a.sort((x,y)=>x.price-y.price);if(so==="h")a.sort((x,y)=>y.price-x.price);if(so==="n")a.sort((x,y)=>x.name.localeCompare(y.name));return a}
 function render(){const A=list(),a=A.slice(0,lim),q=$("#q").value;$("#pv").textContent=+$("#pr").value>=5000?"any price":money(+$("#pr").value);
  $("#ttl").textContent=q?`Results for “${q}”`:F==="wish"?"Your wishlist":F==="new"?"New releases":F==="u15"?"Under ₹1,500":F==="ALL"?"Popular games":F==="stock"?"In stock":F+" games";$("#cnt").textContent=A.length+" listings · pre-owned discs only";
- $("#grid").innerHTML=a.length?a.map(g=>`<article class="card rv"><div class="cover${IC[g.w]?" has":" sk"}" data-id="${g.id}" style="--h:${g.hue}" data-a="det" data-k="${g.id}"><span class="pl">${g.pl}</span>${g.stock?"":'<span class="stk out">Sold out</span>'}<button class="hrt ${wl.includes(g.id)?"on":""}" data-a="heart" data-k="${g.id}" aria-label="Save to wishlist">${wl.includes(g.id)?"♥":"♡"}</button>${disc(g,"",IC[g.w])}</div><div class="cb"><h3>${g.name}</h3><div class="muted">${g.genre} · ${g.y}</div><div class="pr"><span class="price">${money(g.price)}</span></div><div class="row"><span class="muted">Pre-owned disc</span><span class="cond">${g.cond}</span></div><div class="ca"><button class="btn s" data-a="det" data-k="${g.id}">Details</button><button class="btn" ${g.stock?"":"disabled"} data-a="add" data-k="${g.id}">Add to cart</button></div></div></article>`).join(""):`<div class="empty">No match for “${q||"these filters"}”.<br><br>Can’t find a game? We can source it.<br><br><button class="btn" data-a="req">Request it on WhatsApp</button></div>`;
+ $("#grid").innerHTML=a.length?a.map(g=>`<article class="card rv"><div class="cover${IC[g.w]?" has":" sk"}" data-id="${g.id}" style="--h:${g.hue}" data-a="det" data-k="${g.id}">${g.stock?"":'<span class="stk out">Sold out</span>'}<button class="hrt ${wl.includes(g.id)?"on":""}" data-a="heart" data-k="${g.id}" aria-label="Save to wishlist">${wl.includes(g.id)?"♥":"♡"}</button>${disc(g,"",IC[g.w])}</div><div class="cb"><h3>${g.name}</h3><div class="muted">${g.genre} · ${g.y}</div><div class="pr"><span class="price">${money(g.price)}</span></div><div class="row"><span class="muted">Pre-owned disc</span><span class="cond">${g.cond}</span></div><div class="ca"><button class="btn s" data-a="det" data-k="${g.id}">Details</button><button class="btn" ${g.stock?"":"disabled"} data-a="add" data-k="${g.id}">Add to cart</button></div></div></article>`).join(""):`<div class="empty">No match for “${q||"these filters"}”.<br><br>Can’t find a game? We can source it.<br><br><button class="btn" data-a="req">Request it on WhatsApp</button></div>`;
  if(A.length>lim)$("#grid").insertAdjacentHTML("beforeend",`<div style="grid-column:1/-1;text-align:center;padding:10px"><button class="btn s" data-a="more">Show more games (${A.length-lim} left)</button></div>`);
  document.querySelectorAll(".cover.sk").forEach(c=>io.observe(c));document.querySelectorAll(".card.rv:not(.in)").forEach(c=>ro.observe(c));count()}
 function suggest(){const q=$("#q").value.trim(),b=$("#sug");if(!q){b.classList.remove("show");return}const a=G.filter(g=>match(g,q)).slice(0,6);
@@ -370,7 +499,7 @@ function suggest(){const q=$("#q").value.trim(),b=$("#sug");if(!q){b.classList.r
 const open=h=>{$("#md").innerHTML=h;$("#ov").classList.add("show")},shut=()=>$("#ov").classList.remove("show"),hd=t=>`<div class="mh"><h2>${t}</h2><button class="x" data-a="x">✕</button></div>`;
 const wa=t=>window.open(`https://wa.me/${CFG.wa}?text=${encodeURIComponent(t)}`,"_blank");
 const sub=()=>cart.reduce((n,x)=>n+M[x.id].price*x.qty,0);
-function det(id){const g=M[id],o=G.find(x=>x.name===g.name&&x.id!==id);open(hd(g.name)+`<div class="dl"><div class="dc ${IC[g.w]?"has":""}" style="--h:${g.hue}">${disc(g,"",IC[g.w])}</div><div><span class="muted">${g.pl} · ${g.genre} · ${g.y}</span><div class="pr"><span class="price" style="font-size:28px">${money(g.price)}</span></div><p class="desc">${g.d}</p><div class="ln"></div><div class="tl"><span class="muted">Condition</span><b>${g.cond}</b></div><div class="tl"><span class="muted">Availability</span><b>${g.stock?"In stock":"Sold out"}</b></div><div class="tl"><span class="muted">Includes</span><b>Disc + original case</b></div>${o?`<div class="tl"><span class="muted">Also on</span><a href="#" style="color:#69b8ff" data-a="det" data-k="${o.id}">${o.pl} · ${money(o.price)}</a></div>`:""}<button class="btn" style="width:100%;margin-top:10px" ${g.stock?"":"disabled"} data-a="add" data-k="${id}" data-c="1">Add to cart</button></div></div><div class="note">The disc art uses the official cover. Ask us on WhatsApp for a photo of the exact disc.</div>`);
+function det(id){const g=M[id],o=G.find(x=>x.name===g.name&&x.id!==id);open(hd(g.name)+`<div class="dl"><div class="dc ${IC[g.w]?"has":""}" style="--h:${g.hue}">${disc(g,"",IC[g.w])}</div><div><span class="muted">${g.pl} · ${g.genre} · ${g.y}</span><div class="pr"><span class="price" style="font-size:28px">${money(g.price)}</span></div><p class="desc">${g.d}</p><div class="ln"></div><div class="tl"><span class="muted">Condition</span><b>${g.cond}</b></div><div class="tl"><span class="muted">Availability</span><b>${g.stock?"In stock":"Sold out"}</b></div><div class="tl"><span class="muted">Includes</span><b>Disc + original case</b></div>${o?`<div class="tl"><span class="muted">Also on</span><a href="#" style="color:#69b8ff" data-a="det" data-k="${o.id}">${o.pl} · ${money(o.price)}</a></div>`:""}<button class="btn" style="width:100%;margin-top:10px" ${g.stock?"":"disabled"} data-a="add" data-k="${id}" data-c="1">Add to cart</button></div></div><div class="note">The photo is the official cover art. Ask us on WhatsApp for a photo of the exact disc.</div>`);
  pic(g).then(u=>{const f=$("#md .face");if(!u||!f||f.querySelector("img"))return;const im=new Image();im.alt="";im.onload=()=>{im.className="ok";$("#md .dc")?.classList.add("has")};im.src=u;f.prepend(im)})}
 function openCart(){if(!cart.length)return open(hd("Your cart")+`<div class="empty">Your cart is empty.<br><br><button class="btn" data-a="x">Browse games</button></div>`);
  const s=sub(),d=off(s),l1=Math.max(0,CFG.free-s),l2=Math.max(0,5001-s),bar=(t,v)=>`<div class="muted">${t}</div><div class="prog"><i style="width:${Math.min(100,v*100)}%"></i></div>`;
@@ -399,7 +528,8 @@ $("#gen").innerHTML='<option value="">All genres</option>'+[...new Set(G.map(g=>
 $("#q").addEventListener("input",()=>{lim=24;suggest();render()});
 $("#q").addEventListener("keydown",e=>{if(e.key==="Enter"){$("#sug").classList.remove("show");$("#cat").scrollIntoView()}});
 addEventListener("keydown",e=>{if(e.key==="/"&&!/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)){e.preventDefault();$("#q").focus()}if(e.key==="Escape")shut()});
-$("#mqi").innerHTML=(h=>h+h)([...new Set(G.map(g=>g.name))].slice(0,26).map(n=>`<span>${n}</span>`).join(""));document.querySelectorAll(".trust div,.hb").forEach(x=>{x.classList.add("rv");ro.observe(x)});setTimeout(()=>{const x=$("#splash");x&&x.remove()},2400);
+$("#mqi").innerHTML=(h=>h+h)([...new Set(G.map(g=>g.name))].slice(0,26).map(n=>`<span>${n}</span>`).join(""));document.querySelectorAll(".trust>div,.hb").forEach(x=>{x.classList.add("rv");ro.observe(x)});[["God of War Ragnarök|PS5","#hf1"],["Red Dead Redemption 2|PS4","#hf2"]].forEach(([k,i])=>{const g=G.find(x=>x.key===k);pic(g).then(u=>{if(!u)return;const im=new Image();im.alt="";im.onload=()=>{im.className="ok";$(i).classList.add("has")};im.src=u;$(i+" .face").prepend(im)})});setTimeout(()=>{const x=$("#splash");x&&x.remove()},2400);
+document.querySelectorAll(".ch[data-p]").forEach(c=>c.innerHTML=sin(c.dataset.p));
 $("#n").textContent=new Set(G.map(g=>g.name)).size+"+";$("#yr").textContent=NOW;render();
 </script>
 </body></html>
